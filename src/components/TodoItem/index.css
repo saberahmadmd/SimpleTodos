@@ -1,12 +1,126 @@
-/* Write your CSS here */
-.list-item {
-    display: flex;
-    justify-content: space-between;
+/* Todo item container */
+.todo-item {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
-.button{
-    background-color: transparent;
-    border: 1px solid #ff0b37;
-    border-radius: 5px;
-    color: #ff0b37;
-    height: 30px;
+
+/* Styling when todo item is completed */
+.todo-item.completed {
+  background-color: #e0ffe0;
+  text-decoration: line-through;
+}
+
+/* Title styling */
+.title {
+  color: #333;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  flex-grow: 1;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Edit and delete buttons styling */
+button {
+  background-color: #ff8542;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effects */
+button:hover {
+  background-color: #e76f1f;
+}
+
+/* Checkbox styling */
+input[type='checkbox'] {
+  margin-right: 15px;
+}
+
+/* Save button when editing a todo */
+button[type='button']:last-of-type {
+  background-color: #4caf50;
+}
+
+/* Hover effect for delete button */
+.delete-btn {
+  background-color: white;
+  color: #ff0b37;
+  border: 2px solid #ff0b37;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Delete button hover effect */
+.delete-btn:hover {
+  background-color: #ff0b37;
+  color: white;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  /* Reduce size for smaller screens */
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  /* Adjust button size and spacing for mobile */
+  button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Adjust delete button styling for mobile */
+  .delete-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .todo-item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  /* Adjust button size on larger screens */
+  .delete-btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin-left: 20px;
+  }
 }
