@@ -1,0 +1,12 @@
+/* Write your CSS here */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    background-color: transparent;
+    border: 1px solid #ff0b37;
+    border-radius: 5px;
+    color: #ff0b37;
+    height: 30px;
+}
